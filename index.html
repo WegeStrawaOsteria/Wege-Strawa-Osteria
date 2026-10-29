@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wege Strawa Osteria – domowa kuchnia wegetariańska w Gliwicach</title>
+<meta name="description" content="Wege Strawa Osteria – domowa kuchnia wegetariańska w Gliwicach, ul. Ligonia 18. Obiady na wynos i catering. Wtorek–piątek 12:30–17:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1F3EC; --ink:#1E2E25; --muted:#56665B; --beet:#7A1F43; --pea:#B7D58A;
+  --line:#CBD3C3; --card:#FFFFFF;
+  --display:"Gloock", Georgia, "Times New Roman", serif;
+  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{--paper:#16211B;--ink:#E8EDE3;--muted:#A3B2A6;--beet:#E58AAE;--pea:#9CC26A;--line:#2F3E34;--card:#1D2A23;color-scheme:dark}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body);padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--beet);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+
+header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.logo{font:400 1.45rem/1 var(--display);text-decoration:none;color:var(--ink)}
+.logo em{font-style:normal;color:var(--beet)}
+.nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+@media (max-width:720px){.nav ul{display:none}}
+.btn{display:inline-block;background:var(--beet);color:#fff;text-decoration:none;font-weight:600;padding:.7rem 1.2rem;border-radius:999px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+@media (prefers-color-scheme: dark){.btn{color:#16211B}.btn.ghost{color:var(--ink)}}
+.btn:hover{filter:brightness(1.08)}
+
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding:5rem 0 4rem}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding:3rem 0}}
+h1{font:400 clamp(2.5rem,6vw,4.4rem)/1.04 var(--display);margin:0 0 1.5rem;letter-spacing:-.01em}
+.lead{font-size:1.2rem;color:var(--muted);max-width:36ch;margin:0 0 2rem}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.board{background:var(--ink);color:var(--paper);border-radius:6px;padding:2rem;transform:rotate(1.2deg);box-shadow:0 18px 40px -20px rgba(30,46,37,.6)}
+@media (prefers-color-scheme: dark){.board{background:var(--card);color:var(--ink);border:1px solid var(--line)}}
+@media (prefers-reduced-motion: reduce){.board{transform:none}}
+.board h2{font:400 1.7rem/1.1 var(--display);margin:0 0 1rem;color:var(--pea)}
+.board p{margin:0 0 1rem}
+.board .hours{border-top:1px dashed rgba(241,243,236,.3);padding-top:1rem;margin-top:1.2rem}
+@media (prefers-color-scheme: dark){.board .hours{border-top-color:var(--line)}}
+.board a{color:var(--pea);font-weight:600}
+
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2.sec{font:400 clamp(2rem,4vw,2.8rem)/1.1 var(--display);margin:0 0 .6rem}
+.intro{color:var(--muted);max-width:60ch;margin:0 0 2.5rem}
+
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+@media (max-width:860px){.offer{grid-template-columns:1fr}}
+.offer h3{font:400 1.5rem/1.2 var(--display);margin:0 0 .8rem;padding-bottom:.6rem;border-bottom:3px solid var(--pea)}
+.offer p{margin:0;color:var(--muted)}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.about p{margin:0 0 1rem;max-width:60ch}
+.quote{font:400 1.7rem/1.3 var(--display);color:var(--beet);margin:0}
+
+.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+@media (max-width:860px){.visit{grid-template-columns:1fr}}
+.visit h3{font:600 1rem/1.4 var(--body);margin:0 0 .5rem;color:var(--muted)}
+.visit p{margin:0 0 .3rem}
+.hours-t{border-collapse:collapse}
+.hours-t td{padding:.15rem 1.2rem .15rem 0}
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Wege Strawa <em>Osteria</em></a>
+    <nav aria-label="Menu główne">
+      <ul>
+        <li><a href="#oferta">Co gotujemy</a></li>
+        <li><a href="#catering">Catering</a></li>
+        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="tel:+48501232465">Zadzwoń</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>Wegetariańska kuchnia jak w domu, w samym centrum Gliwic.</h1>
+      <p class="lead">Gotujemy z serca i z radości dzielenia się smakami. Obiady na wynos i catering na każdą okazję.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+48501232465">Zamów: 501 232 465</a>
+        <a class="btn ghost" href="https://www.facebook.com/WegeStrawa">Dzisiejsze menu</a>
+      </div>
+    </div>
+    <aside class="board" aria-label="Dzisiejsze menu">
+      <h2>Co dziś w garnkach?</h2>
+      <p>Menu zmienia się codziennie. Aktualną listę dań publikujemy na Facebooku i Instagramie.</p>
+      <p><a href="https://www.facebook.com/WegeStrawa">Zobacz na Facebooku</a> · <a href="https://www.instagram.com/wege.strawa">Instagram</a></p>
+      <p class="hours">Wtorek–piątek, 12:30–17:00<br>ul. Ligonia 18, Gliwice</p>
+    </aside>
+  </div>
+
+  <section id="oferta">
+    <div class="wrap">
+      <h2 class="sec">Co gotujemy</h2>
+      <p class="intro">Kuchnia wegetariańska bez nudy: od polskich klasyków po smaki z Azji. Codziennie coś innego.</p>
+      <div class="offer">
+        <div><h3>Zupy</h3><p>Rozgrzewające, gęste, domowe. Od barszczu po zupy z dalekich stron.</p></div>
+        <div><h3>Dania główne</h3><p>Sycące obiady na wynos, np. pad thai czy dania z kimchi, obok tradycyjnych smaków.</p></div>
+        <div><h3>Na wynos</h3><p>Zadzwoń, zamów i odbierz. Obiad gotowy, kiedy przyjdziesz.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catering">
+    <div class="wrap about">
+      <div>
+        <h2 class="sec">Catering</h2>
+        <p>Przygotujemy wegetariańskie jedzenie na spotkanie w firmie, przyjęcie rodzinne czy kameralną imprezę. Menu ustalamy razem, pod liczbę gości i okazję.</p>
+        <p>Zadzwoń, a opowiemy, co możemy dla Ciebie ugotować.</p>
+        <a class="btn" href="tel:+48501232465">Zapytaj o catering</a>
+      </div>
+      <p class="quote">Z serdecznością i zaangażowaniem, przy każdym garnku.</p>
+    </div>
+  </section>
+
+  <section id="o-nas">
+    <div class="wrap about">
+      <div>
+        <h2 class="sec">O nas</h2>
+        <p>Wege Strawa Osteria to niszowe, kameralne miejsce stworzone dla Was. Gotujemy tak, jak w domu: z lubością i radością dzielenia się wegetariańskimi smakami.</p>
+        <p>Nie trzeba być wegetarianinem, żeby u nas zjeść. Wystarczy lubić dobre, domowe jedzenie.</p>
+      </div>
+      <p class="quote">Ocena 5,0 od naszych gości w Google.</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <h2 class="sec">Odwiedź nas</h2>
+      <p class="intro">Zamówienia na wynos i catering przyjmujemy telefonicznie.</p>
+      <div class="visit">
+        <div>
+          <h3>Adres</h3>
+          <p>ul. Ligonia 18<br>44-100 Gliwice</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Wege+Strawa+Ligonia+18+Gliwice">Otwórz w mapach</a></p>
+        </div>
+        <div>
+          <h3>Godziny otwarcia</h3>
+          <table class="hours-t">
+            <tr><td>wt.–pt.</td><td>12:30–17:00</td></tr>
+            <tr><td>sob.–pon.</td><td>zamknięte</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <p><a href="tel:+48501232465">+48 501 232 465</a></p>
+          <p><a href="https://www.facebook.com/WegeStrawa">Facebook</a></p>
+          <p><a href="https://www.instagram.com/wege.strawa">Instagram</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Wege Strawa Osteria, Gliwice</span>
+    <span>Domowa kuchnia wegetariańska</span>
+  </div>
+</footer>
+</body>
+</html>
